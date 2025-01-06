@@ -27,7 +27,9 @@ func main() {
 	e.PUT("/messages/:id", handler.update)
 	e.DELETE("/messages/:id", handler.remove)
 
-	e.Start(":8080")
+	if err := e.Start(":8080"); err != nil {
+		panic(err)
+	}
 }
 
 func homepage(c echo.Context) error {
