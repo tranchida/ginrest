@@ -1,0 +1,29 @@
+GET http://localhost:8080/messages
+
+###
+
+POST http://localhost:8080/messages
+Content-Type: application/json
+
+{
+  "id": "3",
+  "body": "Hello, World!",
+  "headers": {
+    "test": "test",
+    "test2": "test2"
+  }
+}
+
+###
+
+GET http://localhost:8080/messages/3
+Content-Type: application/json
+
+{
+  "id": "1",
+  "body": "Hello, World!"
+}
+
+###
+
+DELETE http://localhost:8080/messages/3
